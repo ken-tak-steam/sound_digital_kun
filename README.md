@@ -10,22 +10,29 @@
 - 標本化・量子化・符号化をタブで切り替えて圧縮前後を比較
 - スライダと再生ボタンを画面下に常時表示
 
+## GitHub Pages
+
+利用URL：https://ken-tak-steam.github.io/sound_digital_kun/
+
+ダウンロード：https://ken-tak-steam.github.io/sound_digital_kun/download.html
+
+公開設定：Settings → Pages → Deploy from a branch → main / (root)。
+
 ## ローカル起動
 
 依存パッケージやビルドは不要です。Python 3 がある環境で以下を実行してください。
 
 ```sh
-python3 -m http.server 8000 --directory dist --bind 127.0.0.1
+python3 -m http.server 8000 --bind 127.0.0.1
 ```
 
 ブラウザで http://localhost:8000 を開きます。録音にはマイクの許可が必要です。外部に配置する場合は HTTPS を使用してください。
 
 ## ファイル構成
 
-- `dist/index.html`: 画面
-- `dist/style.css`: 表示とレスポンシブレイアウト
-- `dist/app.js`: 録音、音声処理、再生、図示
-- `.openai/hosting.json`: 既存の Sites 公開先設定
+- `index.html`: 画面
+- `style.css`: 表示とレスポンシブレイアウト
+- `app.js`: 録音、音声処理、再生、図示
 
 ## データ量と音声処理
 
@@ -34,7 +41,7 @@ python3 -m http.server 8000 --directory dist --bind 127.0.0.1
 ## 動作確認
 
 ```sh
-node --check dist/app.js
+node --check app.js
 ```
 
 ブラウザではタブ切り替え、スライダの両端、数値と図の連動、元音声・圧縮後音声の再生を確認します。マイク録音は利用するブラウザと実機で確認してください。

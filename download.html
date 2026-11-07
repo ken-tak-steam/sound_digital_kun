@@ -13,16 +13,16 @@
 <main>
 <h1>音のデジタル化君をダウンロード</h1>
 <p id="status" role="status" aria-live="polite">ダウンロードする場合は、下のボタンを押してください。確認画面で「OK」を選ぶと保存を開始します。</p>
-<a id="download" class="button" href="./dist/index.html" download="sound_digital_kun.html">HTMLをダウンロード</a>
+<a id="download" class="button" href="./index.html" download="sound_digital_kun.html">HTMLをダウンロード</a>
 <p>保存した <strong>sound_digital_kun.html</strong> をブラウザで開いてご利用ください。</p>
 <small>サンプル音はオフラインでも利用できます。音声は端末内で処理し、サーバーには送信しません。マイク録音にはブラウザの許可と、HTTPSまたはlocalhostでの利用が必要です。</small>
 
-<p><a href="./dist/index.html">ブラウザでそのまま使う</a></p>
+<p><a href="./index.html">ブラウザでそのまま使う</a></p>
 </main>
 <script>
 const link=document.getElementById('download');
 async function prepare(){
- const paths=['./dist/index.html','./dist/style.css','./dist/app.js'];
+ const paths=['./index.html','./style.css','./app.js'];
  const responses=await Promise.all(paths.map(path=>fetch(path,{cache:'no-store'})));
  if(responses.some(response=>!response.ok)) throw new Error('download failed');
  const [html,css,js]=await Promise.all(responses.map(response=>response.text()));
